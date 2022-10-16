@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer'; 
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         CODER-APP
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar />
+    <ItemListContainer saludo = "Hola bienvenidos a la pagina que te endulza la vida!!"
+                      productos = {["tortas, ", "Porciones, ", "Cookies "]}
+    />
+   </>
   );
 }
 
 export default App;
+
+
