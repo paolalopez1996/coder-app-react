@@ -23,7 +23,7 @@ const Navbar = () => {
                 <Link  to='Category/Cupcakes' class="nav-link" >Cupcakes</Link>
               </li>
               <li class="nav-item">
-                <Link  to='Category/Cookies' class="nav-link" >Contacto</Link>
+                <a href="#footer" class="nav-link" >Contacto</a>
               </li>
             </ul>
           </div>

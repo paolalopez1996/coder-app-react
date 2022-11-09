@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react'
 import { products } from '../mock/Products';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import ClockLoader from "react-spinners/ClockLoader";
 
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true)
     const { idProducto } = useParams();
    
   useEffect(() => {
@@ -16,7 +18,7 @@ const ItemDetailContainer = () => {
             const ref = idProducto ? productDetalles : products;
               setTimeout(() => {
                   res(ref);
-              }, 500);
+              }, 1500);
           });
       };
       getProduct()
@@ -25,12 +27,24 @@ const ItemDetailContainer = () => {
           })
           .catch((error) => {
               console.log(error);
-          });
+          })
+          .finally(() => {
+              setLoading(false)
+          })
+          return () => setLoading(true)
   }, [idProducto]);
+  if(loading){
+    return (
+      <div className='container-loader'>
+          <ClockLoader
+          size={100}
+          />
+        </div> 
+    )
+  }
   return (
     <>
     <ItemDetail product = {item}/>
-    
     </>
   )
 }

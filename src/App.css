@@ -5,11 +5,21 @@
   /* overflow: hidden; */
   box-sizing: border-box; 
   /* font-family: 'Montserrat', sans-serif; */
-
+}
+.container-loader{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 18rem;
+ 
 }
 .brand img{
   width: 180px;
   height: 80px;
+}
+.contenedor-productos{
+  margin-bottom: 3rem;
 }
 .lista{
   border-radius: 30%;
@@ -38,19 +48,20 @@
   background-color: #f0e8e1;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
 } 
-.detalles{
-
+/* boton ver detalle */
+.detalles, .irCarrito{
   color: black;
   padding: 5px;
   text-decoration: none;
   font-size: 20px;
   font-family: 'Fredoka One', cursive;
 }
-.detalles:hover{
+.detalles, .irCarrito:hover{
   background-color: #c6ac8f;
   text-decoration: none;
   color: black;
 }
+
 .price{
   font-family: 'Montserrat', sans-serif; 
   color: black;
@@ -61,7 +72,7 @@
     border-Radius: 8%;
     color: white;
 }
-
+/* detalles del producto */
  .contenedorBotones{
     display: flex;
     flex-direction: row;
@@ -69,19 +80,20 @@
     margin-top: 1rem;
     font-Size: 30px;
     font-weight: 900;
-    width: 100%; 
+    width: 30%; 
     color: black;
-    background-color: pink;
+   background-color: #72DDF7;
 } 
 .imagenes{
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   -webkit-box-shadow: -8px 17px 30px -4px #c6ac8f;;
 -moz-box-shadow: -8px 17px 30px -4px #c6ac8f;;
 box-shadow: -8px 17px 30px -4px #c6ac8f;;
-  padding: 10px;
+  padding: 8px;
   margin: 2rem;
 }
+
  .contenedorBotones button{
    width: 80px;
   font-size: 15px;
@@ -89,6 +101,7 @@ box-shadow: -8px 17px 30px -4px #c6ac8f;;
   margin-right: 1rem;
   border: transparent;
   background-color: transparent;
+   font-family: 'Fredoka One', cursive;
 } 
 .contador-result{
   color: black;
@@ -97,23 +110,73 @@ box-shadow: -8px 17px 30px -4px #c6ac8f;;
 }
  .item{
   display: flex;
- 
-  width: 60%;
+  background-color: #FDC5F5;
+  /* font-family: 'Fredoka One', cursive; */
+  font-family: 'Montserrat', sans-serif; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 80%;
   margin-top: 2rem;
+  margin-left: 8.5rem;
+  margin-bottom: 10rem;
   text-align: center;
+  box-shadow: 1px -11px 18px -3px #c6ac8f;
+-webkit-box-shadow: 1px -11px 18px -3px #c6ac8f;
+-moz-box-shadow: 1px -11px 18px -3px #c6ac8f;
 } 
 .item-img{
-  width: 320px;
-  height: 350px;
+  width: 300px;
+  height: 320px;
+  padding: 4px;
+  border-radius: 5%;
 }
 .descrip{
   width: 100%;
   text-align: justify;
   padding: 10px;
-  font-size: 30px;
+  font-size: 20px;
+  font-weight: 800;
+  font-style: oblique;
+}
+.descrip span{
+  font-style: normal;
+}
+#titulo-detail{
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  font-size: 35px;
 }
 .signos{
-  background-color: aqua;
+
   font-size: 50px;
- 
+}
+.irCarrito{
+ background-color: #72DDF7;
+  text-decoration: none;
+}
+/* footer */
+#footer{
+font-family: 'Montserrat', sans-serif; 
+font-weight: 800;
+color: black;
+font-size: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+justify-content: space-around;
+padding: 10px;
+box-shadow: 1px -11px 18px -3px #c6ac8f;
+-webkit-box-shadow: 1px -11px 18px -3px #c6ac8f;
+-moz-box-shadow: 1px -11px 18px -3px #c6ac8f;
+background-image: url(https://images.unsplash.com/photo-1519733949-b7dfe6268abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+background-repeat: no-repeat;
+ background-position-y: 65%; 
+background-size: cover;
+opacity: 90%;
+}
+#footer ul li{
+  list-style: none;
 }

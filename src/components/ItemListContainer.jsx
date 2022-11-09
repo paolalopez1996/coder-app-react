@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { products } from '../mock/Products';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-
+ import ClockLoader from "react-spinners/ClockLoader";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true)
   const { categoryName } = useParams();
  
   useEffect(() => {
@@ -16,7 +17,7 @@ const ItemListContainer = () => {
               const referencia= categoryName ? productosFiltrados : products;
             setTimeout(() => {
                   res(referencia);
-              }, 500);
+              }, 1500);
           });
       };
       getProducts()
@@ -26,8 +27,25 @@ const ItemListContainer = () => {
           })
           .catch((error) => {
               console.log(error);
-          });
+          })
+          .finally(() => {
+            setLoading(false)
+        })
+        return () => setLoading(true)
   }, [categoryName]);
+
+
+  if(loading){
+    return (
+      <div className='container-loader'>
+      <ClockLoader
+      size={100}
+      />
+    </div> 
+    );
+
+  }
+
 
   return (
     
