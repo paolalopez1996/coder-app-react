@@ -1,20 +1,19 @@
 
 import {  useState, createContext} from 'react';
 
+
 export const CartContext = createContext([])
 
 
 const CartProvider = ({ children }) => {
 
 const [cart, setCart] = useState([])
-
-console.log(cart)
-
 //Funciones
 ///agregar producto sin sobreescribir
 const addProduct = (item, quantity) => {
-  let newCart;
+  let newCart = [...cart]
   let product = cart.find(product => product.id === item.id);
+
   if (product) {
     product.quantity += quantity;
     newCart = [...cart];
@@ -33,16 +32,22 @@ const clearCart = () => setCart([])
 const isInCart = (id) => cart.find(prod => prod.id === id) ? true  : false;
 
 //remover 1 producto
-const removeProduct = (itemId) => cart.filter(prod => prod.itemId !== itemId) ;
+const removeProduct = (id) => {
+const prodRemove =  cart.filter(prod => prod.id !== id) ;
+setCart(prodRemove)
+}
 
-
-//Funcion para totalizar el Carrito
-const totalCart = () => {
+//Funcion precio total
+const totalPrice= () => {
   return cart.reduce((total, item) => total + item.quantity * item.price, 0)
+}
+//funcion total unidades
+const totalUnidades = () => {
+return cart.reduce((act, next) => act + next.quantity, 0)
 }
 
 return (
-    <CartContext.Provider value={{clearCart, isInCart, removeProduct, addProduct, totalCart}}>
+    <CartContext.Provider   value={{ cart, clearCart, isInCart, removeProduct, addProduct, totalPrice, totalUnidades}}>
     {children}
     </ CartContext.Provider>
   )
