@@ -8,7 +8,7 @@ import Cart from './components/cart/Cart';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from './Context/CartContext';
 import { Footer } from './components/Footer';
-
+import Form from './components/form/Form';
 
 
 
@@ -22,6 +22,7 @@ function App() {
        <Route path="/category/:categoryName" element={<ItemListContainer/>}  />
       <Route path='/ItemDetail/:idProducto' element={<ItemDetailContainer/>}/>
       <Route path="/cart" element={<Cart />} />
+      <Route path="/form" element={<Form />} />
     </Routes>
     <Footer />
     </CartProvider>

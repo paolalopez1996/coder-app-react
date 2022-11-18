@@ -20,7 +20,6 @@ export const products = [
         img: 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=651&q=80',
     },
     {
-    
         id: "3",
         title: 'Torta Arcoiris',
         price: 4000,
@@ -95,7 +94,7 @@ export const products = [
     },
     {
         id: "11",
-        title: ' 24 cupcakes surtidos',
+        title: '24 cupcakes surtidos',
         price: 4000,
         stock: 10,
         category: 'Cupcakes',

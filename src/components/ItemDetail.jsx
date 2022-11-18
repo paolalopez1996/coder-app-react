@@ -10,9 +10,9 @@ const ItemDetail = ( { product }) => {
 const [goToCart, setGoToCart] = useState(true);
 const {addProduct} = useContext(CartContext)
 
-  const onAdd =  (cantidad) =>{
+  const onAdd =  (quantity) =>{
     setGoToCart(false)
-    addProduct(product, cantidad)
+    addProduct(product, quantity)
    
     // console.log(`haz seleccionado ${cantidad} unidads`)
   }
@@ -26,16 +26,23 @@ const {addProduct} = useContext(CartContext)
         <p><span>Categoria:</span>  {product.category}</p>
         <p><span>Peso Aprox:</span> {product.peso}</p>
         <p>{product.detail}</p>
+        
+         
+        
         {
           goToCart
             ? 
             <ItemCount 
-                initial = {0}
+                initial = {1}
                 stock = {product.stock}
                 onAdd = {onAdd} 
             />
             : 
+            <div>
             <Link to={"/cart"} className="irCarrito">ir al carrito</Link>
+            <Link to={"/"} className="irCarrito" >seguir comprando</Link>
+            </div>
+            
         }
         
         </div>
