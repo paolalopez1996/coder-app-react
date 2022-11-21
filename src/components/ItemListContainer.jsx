@@ -23,6 +23,7 @@ const ItemListContainer = () => {
     const ref = categoryName
      ? query(collectionProd, 
       where('category', '==', categoryName )) : collectionProd;
+      
       getDocs(ref)
         .then((res) => {
             const products = res.docs.map((prod) => {

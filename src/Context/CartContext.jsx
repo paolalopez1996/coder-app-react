@@ -13,7 +13,6 @@ const [cart, setCart] = useState([])
 const addProduct = (item, quantity) => {
   let newCart = [...cart]
   let product = cart.find(product => product.id === item.id);
-
   if (product) {
     product.quantity += quantity;
     newCart = [...cart];
@@ -37,11 +36,11 @@ const prodRemove =  cart.filter(prod => prod.id !== id) ;
 setCart(prodRemove)
 }
 
-//Funcion precio total
+//precio total
 const totalPrice= () => {
   return cart.reduce((total, item) => total + item.quantity * item.price, 0)
 }
-//funcion total unidades
+// total unidades
 const totalUnidades = () => {
 return cart.reduce((act, next) => act + next.quantity, 0)
 }

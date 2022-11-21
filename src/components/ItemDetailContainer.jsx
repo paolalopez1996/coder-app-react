@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import ClockLoader from "react-spinners/ClockLoader";
-import { collectionProd } from '../services/firebaseConfig';
-import { getDoc, doc } from 'firebase/firestore';
+import { collectionProd, db } from '../services/firebaseConfig';
+import { getDoc, doc, collection } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
@@ -12,10 +12,10 @@ const ItemDetailContainer = () => {
     const { idProducto } = useParams();
    
     useEffect(() => {
+      const collectionProd = collection(db, 'productos');
       const ref = doc(collectionProd, idProducto);
       getDoc(ref)
           .then((res) => {
-              //console.log(res);
               setItem({
                   id: res.id,
                   ...res.data(),

@@ -4,7 +4,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 const Item = ( { producto }) => {
   return (
     <div  className='contenedor-productos'>
-          <img src={producto.img} alt={producto.title} className="imagenes"/>
+          <img src={producto.img} alt={producto.title} className="imagenes zoom"/>
          
           <article>
           <h2>{producto.title}</h2>

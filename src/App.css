@@ -2,9 +2,22 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  /* overflow: hidden; */
   box-sizing: border-box; 
   /* font-family: 'Montserrat', sans-serif; */
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-family: 'Fredoka One', cursive;
+  padding: 2px;
+}
+a:hover{
+  border-radius: 5%;
+  background-color: #f0e8e1;
+  text-decoration: none;
+  color: black;
+  font-family: 'Fredoka One', cursive;
 }
 .container-loader{
   display: flex;
@@ -20,6 +33,7 @@
 }
 .contenedor-productos{
   margin-bottom: 3rem;
+  
 }
 .lista{
   border-radius: 30%;
@@ -45,7 +59,9 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  background-color: #f0e8e1;
+  background: #d9a7c7; 
+background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  
+background: linear-gradient(to right, #fffcdc, #d9a7c7); 
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
 } 
 /* boton ver detalle */
@@ -56,10 +72,14 @@
   font-size: 20px;
   font-family: 'Fredoka One', cursive;
 }
+.irCarrito{
+  margin-right: 1rem;
+}
 .detalles, .irCarrito:hover{
   background-color: #c6ac8f;
   text-decoration: none;
   color: black;
+ 
 }
 
 .price{
@@ -85,13 +105,21 @@
    background-color: #72DDF7;
 } 
 .imagenes{
-  width: 300px;
-  height: 300px;
-  -webkit-box-shadow: -8px 17px 30px -4px #c6ac8f;;
+  width: 340px;
+  height: 320px;
+  -webkit-box-shadow: -8px 17px 30px -4px #8c7a65;;
 -moz-box-shadow: -8px 17px 30px -4px #c6ac8f;;
 box-shadow: -8px 17px 30px -4px #c6ac8f;;
-  padding: 8px;
-  margin: 2rem;
+   padding: 2px;
+  margin: 2rem; 
+  border-radius: 5%;
+}
+.zoom {
+  transition: transform .2s; 
+}
+
+.zoom:hover {
+  transform: scale(1.1); 
 }
 
  .contenedorBotones button{
@@ -166,7 +194,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-justify-content: space-around;
+justify-content: space-around; 
 padding: 10px;
 box-shadow: 1px -11px 18px -3px #c6ac8f;
 -webkit-box-shadow: 1px -11px 18px -3px #c6ac8f;
@@ -176,7 +204,116 @@ background-repeat: no-repeat;
  background-position-y: 65%; 
 background-size: cover;
 opacity: 90%;
+width: 100%;
+ height: 205px;
 }
 #footer ul li{
   list-style: none;
+}
+.total-productos{
+  background-color: #f15bb5;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.total-prod-info {
+  width: 10rem;
+  padding: 10px;
+  background-color: #FDC5F5;
+  
+}
+.total-botones{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.button-cart{
+  width: 80px;
+  font-size: 15px;
+  font-weight: 800;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  border: transparent;
+  background-color:#72DDF7;
+  text-align: center;
+  text-decoration: none;
+   font-family: 'Fredoka One', cursive;
+}
+.elige-prod{
+ 
+  color: black;
+  height: 50rem;
+  font-size: 30px;
+  text-align: center;
+  padding: 8px;
+background-image: url(https://images.pexels.com/photos/1982485/pexels-photo-1982485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-repeat: no-repeat;
+background-size: cover;
+  text-decoration: none;
+}
+.ir-productos{
+  position: relative;
+  top: 20rem;
+  padding: 2rem;
+  background-color: gray;
+  font-size: 40px;
+  border-radius: 5%;
+}
+.form{
+  min-height: 70vh;
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  background: #d9a7c7; 
+  background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  
+  background: linear-gradient(to right, #fffcdc, #d9a7c7); 
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+  border-radius: 5%;
+ margin-bottom: 12rem;
+ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.form input{
+  margin-top: 0.8rem;
+  text-align: center;
+  width: 15rem;
+  height: 2rem;
+  
+}
+.enviar-info{
+  margin-top: 1rem;
+}
+.id-compra{
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center; 
+  background-color: #72DDF7;
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  height: 30rem;
+  padding-top: 2rem;
+  margin-bottom: 5rem;
+  background: #d9a7c7; 
+  background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  
+  background: linear-gradient(to right, #fffcdc, #d9a7c7); 
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+}
+.id-compra span{
+  color: #f15bb5;
+  font-size: 30px;
+}
+.datos-compra{
+  height: 40rem;
 }

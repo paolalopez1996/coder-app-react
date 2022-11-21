@@ -11,7 +11,6 @@ import { Footer } from './components/Footer';
 import Form from './components/form/Form';
 
 
-
 function App() {
   return (
     <BrowserRouter>

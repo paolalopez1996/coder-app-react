@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# E-commerce comision 45060-React
+## contenido
+```javascript
+const alummno = 'Gianne Lopez'
+```
++ posee 2 ramas, pero todo el contenido del proyecto se encuentra en Main
++ incompleta para la comercializacion
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue realizado para el Curso de React en CoderHouse. Dicho proyecto se trata de un E-commerce basado en venta de productos de pasteleria(cupcakes, tortas, porciones).
 
-## Available Scripts
+ Se puede navegar por las distintas categorias e ir a sus detalles.
+ En el detalle se puede ver la categoria a la que corresponde el producto, imagen, precio, y peso aproximado del mismo; y permite agregarlos al carrito.
 
-In the project directory, you can run:
+  Además, se pueden ver y eliminar los elementos del carrito o vaciar el carrito en su totalidad. una vez elegido los productos, finaliza la compra a través del llenado de un formulario de compra. Finalmente se guarda la orden de compra (con todos sus productos, sus detalles y la fecha de compra) en una base de datos del proyecto, alojada en Firebase y se le proporciona un ID de compra al usuario tambien generada a traves de Firebase.
 
-### `npm start`
+![](public/2.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologia:
+ + [Create React App](https://create-react-app.dev/docs/getting-started). La App fue creada con Create React App
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Utiliza una serie de librerías externas 
 
-### `npm test`
++ [React-Router-Dom](https://reactrouter.com/en/main).     nos permite el enrutamiento y navegabilidad entre los diferentes componentes de nuestra SPA.
+```
+npm install react-router-dom
+```
++ [Firebase](https://reactrouter.com/en/main).  plataforma digital diseñada para facilitar el desarrollo de aplicaciones web y móviles, con el objetivo de mejorar el rendimiento de las mismas a través de la implementación de sus distintos módulos que harán que la aplicación sea mucho más manejable, segura y fácil de utilizar para los usuarios.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
++ [Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/).  Framework front-end con el que le damos los diferentes estilos. 
+```
+npm install react-bootstrap bootstrap
+```
+ + Bootstrap 4.1.0 : 
+ Kit de herramientas de código abierto de front-end, usado para darle estilos al proyecto. El mismo está inyectado a través de un link agregado en el head del index.html
+```
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
+crossorigin="anonymous">
+```
++ [Google Icons](https://fonts.google.com/icons) Biblioteca de íconos de código abierto de Google. El link es inyectado al proyecto en el index.html
+```
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+```
+ + [Font Awesome](https://fonts.google.com/icons) Biblioteca de íconos de código abierto. El link es inyectado al proyecto en el index.html
+```
+<script src="https://kit.fontawesome.com/68f6372bfa.js" crossorigin="anonymous"></script>
 
-### `npm run build`
+```
+ + [React-spinners](https://www.npmjs.com/package/react-spinners)
+ libreria de React que proporciona un componente giratorio React SVG simple que se puede implementar para la operación de espera asíncrona antes de que los datos se carguen en la vista.
+```
+npm install --save react-spinners
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+ + [SweetAlert2](https://sweetalert2.github.io/#download):  es una librería que te permite crear ventanas emergentes con un diseño profesional y fácil de personalizar e implementar
+```
+npm install sweetalert2
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### pasos para levantar el proyecto
 
-### `npm run eject`
+### 1. Clonar el repositorio
+```
+https://github.com/paolalopez1996/coder-app-react.git
+```
+### 2. instalar las dependencias
+```
+npm install
+```
+### 3. correr el proyecto en el navegador
+```
+npm start
+```
+## Vista del proyecto
+### Home
+![](public/home.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Categorias
+![](public/category.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Categorias
+![](public/details.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Categorias
+![](public/form.png)

@@ -17,9 +17,8 @@ const Restar =() => {
     }
     const agregar = () => {
       
-        onAdd(cantidad);
-      
-      }
+      onAdd(cantidad);
+}
       
     useEffect(() =>{
       setCantidad(parseInt(initial))
@@ -37,16 +36,4 @@ const Restar =() => {
 }
 
 export default ItemCount
-
-
-// const [cantidad, setCantidad] = useState(0);
-// const Sumar =() => {
-//         setCantidad(cantidad + 1)
-// }
-// const Restar =() => {
-//         setCantidad(cantidad - 1)
-// } 
-//     const Reset = () => {
-//         setCantidad(0)
-//     }
 

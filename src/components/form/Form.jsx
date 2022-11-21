@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
 import { db } from '../../services/firebaseConfig';
+import TuIdAlert from '../sweetAlert/TuIdAlert';
+
 
 const Form = () => {
    const [name, setName] = useState('')
@@ -15,6 +17,7 @@ const Form = () => {
    const [orderId, setOrderId] = useState('');
    const {cart, totalPrice, clearCart} = useContext(CartContext)
    const totalPrecioCarrito = totalPrice();
+
 
    const sendData = (e) => {
     e.preventDefault();
@@ -49,66 +52,81 @@ const handleEmail1 = (e) =>setEmail1(e.target.value)
 const handleEmail2 = (e) =>setEmail2(e.target.value)
 const handleAddress = (e) =>setAddress(e.target.value)
 
-
 if (orderId) {
     return (
-        <h1>Gracias por tu compra tu número de seguimiento es {orderId}</h1>
+        <>
+       
+        <div className='id-compra'>
+        <h1>Gracias por tu compra tu número de seguimiento es:  </h1>                   
+        <span>{orderId}</span>
+        <TuIdAlert />
+        </div>
+        </>
     );
 }
 
   return (
-    <div
-            style={{
-                minHeight: '70vh',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
-        >
-            <form action="" onSubmit={sendData}>
-                <input
-                    type="text"
-                    placeholder="Nombre"
-                    name="nombre"
-                    onChange={handleName}
-                    value={name}
-                />
-                <input
-                    type="text"
-                    placeholder="Apellido"
-                    name="apellido"
-                    onChange={handleLastName}
-                    value={lastName}
-                />
-                   <input
-                    type="number"
-                    placeholder="numero"
-                    name="numero"
-                    onChange={handleNumber}
-                    value={number}
-                />
-                  <input
-                    type="email"
-                    placeholder="email1"
-                    name="email1"
-                    onChange={handleEmail1}
-                    value={email1}
-                />
-                   <input
-                    type="email"
-                    placeholder="email2"
-                    name="email2"
-                    onChange={handleEmail2}
-                    value={email2}
-                />
-                  <input
-                    type="address"
-                    placeholder="address"
-                    name="address"
-                    onChange={handleAddress}
-                    value={address}
-                />
-                <button>Enviar</button>
+    <div>
+        <form action="" onSubmit={sendData} className="form">
+            <input
+                type="text"
+                placeholder="Nombre"
+                name="nombre"
+                onChange={handleName}
+                value={name} required
+                
+            />
+            <input
+                type="text"
+                placeholder="Apellido"
+                name="apellido"
+                onChange={handleLastName}
+                value={lastName} required
+                
+            />
+            <input
+                type="number"
+                placeholder="numero"
+                name="numero"
+                onChange={handleNumber}
+                value={number} required
+                
+            />
+            <input
+                type="email"
+                placeholder="email1"
+                name="email1"
+                onChange={handleEmail1}
+                value={email1} required
+               
+            />
+            <input
+                type="email"
+                placeholder="email2"
+                name="email2"
+                onChange={handleEmail2}
+                value={email2} required
+            />
+            <input
+                type="address"
+                placeholder="address"
+                name="address"
+                onChange={handleAddress}
+                value={address} required
+               
+            />
+            { email1  !== "" && email1 !== email2 ? (
+                <>
+                <button className='enviar-info' disabled >enviar</button>
+                <span style={{ color: 'red'}}>
+                Verifica que tus emails sean iguales para continuar
+                </span>
+                </> 	
+			) : (
+                <button className='enviar-info' >
+                enviar
+                </button>
+				)}
             </form>
         </div>
   )

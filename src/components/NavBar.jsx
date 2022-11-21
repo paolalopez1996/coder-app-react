@@ -1,34 +1,51 @@
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react'
+import { getDocs, collection } from 'firebase/firestore';
+import { db } from '../services/firebaseConfig';
 
 const Navbar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const catColeccion = collection(db, "categorias")
+    getDocs(catColeccion)
+        .then((res) => {
+            const secciones = res.docs.map((prod) => {
+                return {
+                    id: prod.id,
+                    ...prod.data(),
+                };
+            });
+            setCategories(secciones)
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+  }, [])
+
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <h1>
-          <Link to='/' className="nav-link" > <img src="./2.png" alt=""  className="logo" /></Link>
+          <Link to='/' className="nav-link" ><img src="./2.png" alt=""  className="logo" /></Link>
           </h1>
-  
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
           <div className="collapse navbar-collapse lista" id="navbarSupportedContent">
             <ul className="navbar-nav text-center">
-              <li className="nav-item">
-                <Link to='Category/Tortas Enteras' className="nav-link">Tortas</Link>
-              </li>
-              <li className="nav-item">
-                <Link  to='Category/Porciones' className="nav-link" >Porciones</Link>
-              </li>
-              <li className="nav-item">
-                <Link  to='Category/Cupcakes' className="nav-link" >Cupcakes</Link>
-              </li>
-              <li className="nav-item">
+            {categories.map((infoItem) => (
+                    <Link as={Link}
+                        key={infoItem.id}
+                        className="nav-link"
+                        to={`/Category/${infoItem.path}`}>
+                    {infoItem.title}
+                    </Link>
+                ))}
+                <li className="nav-item">
                 <a href="#footer" className="nav-link" >Contacto</a>
-              </li>
-            </ul>
+              </li> 
+                </ul>
           </div>
           {Navbar && (
-                <Link className="link" to="/cart">
+                <Link className="links" to="/cart">
                     <CartWidget />
                 </Link>
             )}
@@ -39,3 +56,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
