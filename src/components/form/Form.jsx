@@ -27,7 +27,8 @@ const Form = () => {
             lastName,
             number,
             email1,
-            email2
+            email2,
+            
         },
         items: cart,
         total: totalPrecioCarrito,
@@ -55,7 +56,6 @@ const handleAddress = (e) =>setAddress(e.target.value)
 if (orderId) {
     return (
         <>
-       
         <div className='id-compra'>
         <h1>Gracias por tu compra tu número de seguimiento es:  </h1>                   
         <span>{orderId}</span>
@@ -65,7 +65,7 @@ if (orderId) {
     );
 }
 
-  return (
+    return (
     <div>
         <form action="" onSubmit={sendData} className="form">
             <input
@@ -82,7 +82,6 @@ if (orderId) {
                 name="apellido"
                 onChange={handleLastName}
                 value={lastName} required
-                
             />
             <input
                 type="number"
@@ -98,7 +97,6 @@ if (orderId) {
                 name="email1"
                 onChange={handleEmail1}
                 value={email1} required
-               
             />
             <input
                 type="email"
@@ -113,9 +111,8 @@ if (orderId) {
                 name="address"
                 onChange={handleAddress}
                 value={address} required
-               
             />
-            { email1  !== "" && email1 !== email2 ? (
+            {email1 !== "" && email1 !== email2 ? (
                 <>
                 <button className='enviar-info' disabled >enviar</button>
                 <span style={{ color: 'red'}}>
@@ -123,13 +120,11 @@ if (orderId) {
                 </span>
                 </> 	
 			) : (
-                <button className='enviar-info' >
-                enviar
-                </button>
+                <button className='enviar-info'>enviar</button>
 				)}
             </form>
         </div>
-  )
+    )
 }
 
 export default Form

@@ -5,6 +5,7 @@ import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../services/firebaseConfig';
 
 const Navbar = () => {
+// Navbar Dinamico
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -40,18 +41,16 @@ const Navbar = () => {
                     </Link>
                 ))}
                 <li className="nav-item">
-                <a href="#footer" className="nav-link" >Contacto</a>
-              </li> 
+                    <a href="#footer" className="nav-link" >Contacto</a>
+                    </li> 
                 </ul>
-          </div>
-          {Navbar && (
-                <Link className="links" to="/cart">
-                    <CartWidget />
-                </Link>
-            )}
-         
-        </nav>
-      
+        </div>
+        {Navbar && (
+            <Link className="links" to="/cart">
+                <CartWidget />
+            </Link>
+        )}
+    </nav>
     )
 }
 

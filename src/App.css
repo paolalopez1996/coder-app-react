@@ -3,7 +3,6 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box; 
-  /* font-family: 'Montserrat', sans-serif; */
 }
 
 a{
@@ -139,7 +138,6 @@ box-shadow: -8px 17px 30px -4px #c6ac8f;;
  .item{
   display: flex;
   background-color: #FDC5F5;
-  /* font-family: 'Fredoka One', cursive; */
   font-family: 'Montserrat', sans-serif; 
   flex-direction: row;
   justify-content: center;
@@ -210,43 +208,76 @@ width: 100%;
 #footer ul li{
   list-style: none;
 }
+/*CARRITO*/
 .total-productos{
-  background-color: #f15bb5;
-  width: auto;
+  background: #d9a7c7; 
+  background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  
+  background: linear-gradient(to right, #fffcdc, #d9a7c7); 
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
+
+}
+.total-productos img{
+  border-top: 5px solid #c6ac8f;;
+}
+.total-prod-info h3{
+  font-size: 22px;
+  color: black;
 }
 .total-prod-info {
-  width: 10rem;
-  padding: 10px;
-  background-color: #FDC5F5;
-  
+ 
+  width:250px;
+  height:190px;
+  border-top: 5px solid #c6ac8f;;
+  padding: 5px;
+  background: #d9a7c7; 
+  color: #f15bb5;
+  background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  
+  background: linear-gradient(to right, #fffcdc, #d9a7c7); 
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+  font-family: 'Montserrat', sans-serif; 
 }
+.total-precio{
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif; 
+}
+
 .total-botones{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
 }
 .button-cart{
-  width: 80px;
+  width: 90px;
+  height: 50px;
   font-size: 15px;
   font-weight: 800;
   margin-right: 1rem;
   margin-bottom: 1rem;
   flex-direction: row;
   border: transparent;
-  background-color:#72DDF7;
+  background-color:#c6ac8f;
   text-align: center;
   text-decoration: none;
    font-family: 'Fredoka One', cursive;
+   border-radius: 10%;
+}
+.button-cart:hover{
+  background-color: #f99bd7;
 }
 .elige-prod{
- 
   color: black;
   height: 50rem;
   font-size: 30px;

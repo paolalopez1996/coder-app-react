@@ -18,7 +18,7 @@ Este proyecto fue realizado para el Curso de React en CoderHouse. Dicho proyecto
 ## Tecnologia:
  + [Create React App](https://create-react-app.dev/docs/getting-started). La App fue creada con Create React App
 
-Utiliza una serie de librerías externas 
+### Utiliza una serie de librerías externas 
 
 + [React-Router-Dom](https://reactrouter.com/en/main).     nos permite el enrutamiento y navegabilidad entre los diferentes componentes de nuestra SPA.
 ```
@@ -37,10 +37,7 @@ npm install react-bootstrap bootstrap
 integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
 crossorigin="anonymous">
 ```
-+ [Google Icons](https://fonts.google.com/icons) Biblioteca de íconos de código abierto de Google. El link es inyectado al proyecto en el index.html
-```
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-```
+
  + [Font Awesome](https://fonts.google.com/icons) Biblioteca de íconos de código abierto. El link es inyectado al proyecto en el index.html
 ```
 <script src="https://kit.fontawesome.com/68f6372bfa.js" crossorigin="anonymous"></script>
@@ -58,17 +55,17 @@ npm install sweetalert2
 
 ```
 
-### pasos para levantar el proyecto
+## Pasos para levantar el proyecto:
 
 ### 1. Clonar el repositorio
 ```
 https://github.com/paolalopez1996/coder-app-react.git
 ```
-### 2. instalar las dependencias
+### 2. Instalar las dependencias
 ```
 npm install
 ```
-### 3. correr el proyecto en el navegador
+### 3. Correr el proyecto en el navegador
 ```
 npm start
 ```
@@ -79,8 +76,11 @@ npm start
 ### Categorias
 ![](public/category.png)
 
-### Categorias
+### Detalles del producto
 ![](public/details.png)
 
-### Categorias
+### Carrito de productos
+![](public/carrito.png)
+
+### Formulario
 ![](public/form.png)

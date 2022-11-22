@@ -4,9 +4,7 @@ import {  useState, createContext} from 'react';
 
 export const CartContext = createContext([])
 
-
 const CartProvider = ({ children }) => {
-
 const [cart, setCart] = useState([])
 //Funciones
 ///agregar producto sin sobreescribir
@@ -36,7 +34,7 @@ const prodRemove =  cart.filter(prod => prod.id !== id) ;
 setCart(prodRemove)
 }
 
-//precio total
+//total precio
 const totalPrice= () => {
   return cart.reduce((total, item) => total + item.quantity * item.price, 0)
 }
@@ -46,7 +44,14 @@ return cart.reduce((act, next) => act + next.quantity, 0)
 }
 
 return (
-    <CartContext.Provider   value={{ cart, clearCart, isInCart, removeProduct, addProduct, totalPrice, totalUnidades}}>
+    <CartContext.Provider   
+    value={{ cart, 
+     clearCart,
+     isInCart, 
+     removeProduct, 
+     addProduct, 
+     totalPrice, 
+     totalUnidades}}>
     {children}
     </ CartContext.Provider>
   )

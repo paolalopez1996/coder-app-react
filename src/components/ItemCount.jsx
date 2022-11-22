@@ -29,8 +29,8 @@ const Restar =() => {
             <button disabled = {cantidad > stock } onClick ={Sumar} className="signos"> + </button>
             <p className='contador-result' cantidad = {cantidad}>{cantidad}</p>
             <button disabled = {cantidad < 1}  onClick =  {Restar} className="signos"> - </button>
-            <button disabled = {cantidad <= 0 && cantidad > stock} onClick={agregar}  >agregar al carrito</button>
-            <button onClick={Reset} >reset</button>
+            <button disabled = {cantidad <= 0 || cantidad > stock} onClick={agregar}  >agregar al carrito</button>
+            <button onClick={Reset} disabled = {cantidad <= 0}>reset</button>
         </div>
   )
 }

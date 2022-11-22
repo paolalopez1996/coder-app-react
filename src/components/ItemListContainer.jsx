@@ -1,15 +1,8 @@
 
-// import React, { useEffect, useState } from 'react'
-// import ItemList from './ItemList';
-// import { useParams } from 'react-router-dom';
-//  import ClockLoader from "react-spinners/ClockLoader";
-// import { getDocs, query, where, collection} from 'firebase/firestore';
-// import { db } from '../services/firebaseConfig';
-
 import React, { useEffect, useState } from 'react'
- import ItemList from './ItemList';
+import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
- import ClockLoader from "react-spinners/ClockLoader";
+import ClockLoader from "react-spinners/ClockLoader";
 import { getDocs, query, where, collection} from 'firebase/firestore';
 import { db } from '../services/firebaseConfig';
 
@@ -21,10 +14,11 @@ const ItemListContainer = () => {
   useEffect(() => {
     const collectionProd = collection(db, 'productos');
     const ref = categoryName
-     ? query(collectionProd, 
-      where('category', '==', categoryName )) : collectionProd;
+    ? query(collectionProd, 
+      where('category', '==', categoryName )) 
+    : collectionProd;
       
-      getDocs(ref)
+    getDocs(ref)
         .then((res) => {
             const products = res.docs.map((prod) => {
                 return {
